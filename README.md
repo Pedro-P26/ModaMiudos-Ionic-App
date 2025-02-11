@@ -38,10 +38,10 @@ This project, developed for the Human-Computer Interaction course, revolves arou
 Instructions for setting up and running the ModaMiúdos app:
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/Pedro-P26/ModaMiudos-Ionic-App.git
 
 # Navigate to the project directory
-cd moda_miudos
+cd ModaMiudos-Ionic-App
 
 # Install dependencies
 npm install
