@@ -1,0 +1,68 @@
+/* Define a barra de progresso como um container flexível, distribuindo espaço igual entre seus filhos, centralizando-os verticalmente e posicionando-os com um espaçamento igual. */
+.progress-bar {
+    display: flex;
+    justify-content: space-around; /* Distribui espaço igual entre e em torno dos itens */
+    align-items: center; /* Centraliza os itens verticalmente */
+    margin: 20px 0; /* Margem vertical para separar a barra de progresso de outros elementos */
+    position: relative; /* Posicionamento relativo para permitir o posicionamento absoluto de pseudo-elementos */
+}
+
+/* Criar uma linha de conexão entre os círculos da barra de progresso. */
+.progress-bar::before {
+    content: ''; /* Necessário para que o pseudo-elemento seja gerado */
+    position: absolute; /* Posicionamento absoluto em relação ao seu contêiner relativo */
+    top: 50%; /* Posiciona a linha no meio verticalmente */
+    left: 15%; /* Inicia a linha com uma margem da esquerda */
+    right: 15%; /* Termina a linha com uma margem da direita */
+    height: 4px; /* Espessura da linha */
+    background-color: #d3d3d3; /* Cor da linha */
+    z-index: -1; /* Garante que a linha fique atrás dos círculos */
+}
+
+/* Etapas individuais dentro da barra de progresso */
+.step {
+    display: flex; /* Usa flexbox para alinhar conteúdo da etapa */
+    flex-direction: column; /* Organiza os filhos (círculo e label) em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    position: relative; /* Posicionamento relativo para ajustes finos ou posicionamento de pseudo-elementos */
+    z-index: 1; /* Garante que as etapas fiquem acima da linha de progresso */
+}
+
+/*Círculos que representam cada etapa do progresso */
+.step .circle {
+    width: 24px; /* Largura do círculo */
+    height: 24px; /* Altura do círculo */
+    border-radius: 50%; /* Torna o elemento perfeitamente circular */
+    background-color: #d3d3d3; /* Cor de fundo do círculo, cinza quando a etapa não está completa */
+    display: flex; /* Flexbox para alinhar o conteúdo (número ou ícone) dentro do círculo */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    font-weight: bold; /* Faz o texto dentro do círculo ser negrito */
+    color: white; /* Cor do texto dentro do círculo */
+}
+
+/*Alterar a cor de fundo dos círculos para verde */
+.step.completed .circle {
+    background-color: #4caf50; /* Cor verde para indicar que a etapa está completa */
+}
+
+/*Label abaixo do círculo para descrever a etapa */
+.step .label {
+    margin-top: 8px; /* Espaço entre o círculo e o label */
+    font-size: 14px; /* Tamanho da fonte do texto do label */
+    color: #000; /* Cor do texto, preto para alta visibilidade */
+}
+
+.button-dark-gray {
+    --background: #333; /* Cinza escuro */
+    --color: white; /* Cor do texto */
+  }
+  .red-button {
+    --color: red; /*  ícone para vermelho */
+}
+.small-button {
+    width: 80%;
+    margin-left: auto;        // Centralizar o botão com margem automática à esquerda
+    margin-right: auto;       // Centralizar o botão com margem automática à direita
+    
+  }

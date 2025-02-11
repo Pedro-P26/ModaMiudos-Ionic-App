@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!--Texto com umtipo de letra importado-->
+    <ion-title class="bebas-neue-regular">Login</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <!--Texto com umtipo de letra importado-->
+      <ion-title size="large" class="bebas-neue-regular">Login</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+   <!-- Formulário de login, ligado ao FormGroup 'loginForm' -->
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-item [class.error]="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+      <ion-label position="floating">Username</ion-label>
+      <ion-input inputmode="username" formControlName="username" type="username"></ion-input>
+    </ion-item>
+     <!-- Mensagem de erro exibida se o nome de usuário for inválido após tocar-->
+    <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+      <ion-text color="danger" style="padding-left: 15px;">
+        <p>Username deve ter entre 4 e 20 caracteres.</p>
+      </ion-text>
+    </div>
+
+
+    <ion-item [class.error]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input inputmode="password" formControlName="password" type="password"></ion-input>
+    </ion-item>
+    <!-- Mensagem de erro exibida se a senha for inválida após tocar -->
+    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+      <ion-text color="danger" style="padding-left: 15px;">
+        <p>Password deve ter pelo menos 8 caracteres</p>
+      </ion-text>
+    </div>
+
+
+     <!-- Botão para submeter o formulário, desabilitado se o formulário não for válido -->
+    <ion-button class="button-dark-gray small-button" type="submit" expand="block" [disabled]="!loginForm.valid">Login</ion-button>
+  </form>
+
+  <!-- Botão para navegar para a página de registro -->
+  <ion-button  class="button-dark-gray small-button" expand="block" (click)="registar()" style="margin-top: 20px;">Registo</ion-button>
+
+</ion-content>
+
+
+<!--Botões para navegação facil-->
+<ion-footer >
+  <ion-toolbar color="toolbar-background" style="background: white;">
+    <ion-row>
+      <ion-col size="4" >
+        <ion-button expand="block" (click)="home()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="home" style="color: black;"></ion-icon >
+          <ion-text style="color:black">Home</ion-text>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="carrinho()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="basket" style="color: black;"></ion-icon>
+          <ion-text style="color:black">Cesta</ion-text>
+          <ion-badge slot="end" color="blue">{{ (carrinhoService.carrinho$ | async)?.length }}</ion-badge>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="login()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="person" style="color: black;"></ion-icon>
+          <ion-text style="color:black">Conta</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

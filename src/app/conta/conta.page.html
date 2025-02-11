@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!--Texto com um tipo de letra importada-->
+    <ion-title class="bebas-neue-regular">Conta</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <!--Texto com um tipo de letra importada-->
+      <ion-title size="large" class="bebas-neue-regular">Conta</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+   <!-- Lista de opções disponíveis para o utilizador interagir com sua conta -->
+  <ion-list>
+    <ion-item (click)="minhasreservas()">
+      <ion-icon name="list" slot="start"></ion-icon>
+      <ion-label>Minhas Reservas</ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item (click)="alterardados()" >
+      <ion-icon name="finger-print" slot="start"></ion-icon>
+      <ion-label>Alterar Dados Pessoais</ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item (click)="apoio()">
+      <ion-icon name="help-circle" slot="start"></ion-icon>
+      <ion-label>Apoio ao Cliente</ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item  class="logout-button" (click)="terminarSessao()">
+      <ion-icon name="log-out" slot="start"></ion-icon>
+      <ion-label>Terminar Sessão</ion-label>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
+
+
+<!-- Botões de navegação rápida -->
+<ion-footer >
+  <ion-toolbar color="toolbar-background" style="background: white;">
+    <ion-row>
+      <ion-col size="4" >
+        <ion-button expand="block" (click)="home()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="home" style="color: black;"></ion-icon >
+          <ion-text style="color:black">Home</ion-text>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="carrinho()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="basket" style="color: black;"></ion-icon>
+          <ion-text style="color:black">Cesta</ion-text>
+          <ion-badge slot="end" color="blue">{{ (carrinhoService.carrinho$ | async)?.length }}</ion-badge>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="login()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="person" style="color: black;"></ion-icon>
+          <ion-text style="color:black">Conta</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

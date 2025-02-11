@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!--Texto com um tipo de letra importado-->
+    <ion-title class="bebas-neue-regular">Alterar Dados</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <!--Texto com um tipo de letra importado-->
+      <ion-title size="large" class="bebas-neue-regular">Alterar Dados</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Formulário vinculado ao FormGroup 'alterarDadosForm' para atualização de email -->
+  <form [formGroup]="alterarDadosForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Email Antigo</ion-label>
+      <ion-input formControlName="emailAntigo" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email Novo</ion-label>
+      <ion-input formControlName="emailNovo" type="email"></ion-input>
+    </ion-item>
+    <!-- Botão para submeter o formulário, desabilitado se o formulário não for válido -->
+    <ion-button type="submit" class="button-dark-gray small-button" expand="block" [disabled]="!alterarDadosForm.valid">Atualizar Email</ion-button>
+  </form>
+</ion-content>
+
+<!-- Botões de navegação rápida -->
+<ion-footer >
+  <ion-toolbar color="toolbar-background" style="background: white;">
+    <ion-row>
+      <ion-col size="4" >
+        <ion-button expand="block" (click)="home()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="home" style="color: black;"></ion-icon >
+          <ion-text style="color:black">Home</ion-text>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="carrinho()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="basket" style="color: black;"></ion-icon>
+          <ion-text style="color:black">Cesta</ion-text>
+          <ion-badge slot="end" color="blue">{{ (carrinhoService.carrinho$ | async)?.length }}</ion-badge>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="login()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="person" style="color: black;"></ion-icon>
+          <ion-text style="color:black">Conta</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

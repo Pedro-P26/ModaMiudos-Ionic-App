@@ -1,0 +1,55 @@
+/*Centraliza o container principal da sua informação verticalmente e horizontalmente */
+#container {
+  text-align: center; /* Centraliza o texto horizontalmente dentro do container */
+
+  position: absolute; /* Posicionamento absoluto em relação ao seu contêiner mais próximo com posição relativa/absoluta/fixed */
+  left: 0; /* Alinha o lado esquerdo do contêiner com o lado esquerdo do container  */
+  right: 0; /* Alinha o lado direito do contêiner com o lado direito do container */
+  top: 50%; /* Posiciona o topo do contêiner a 50% da altura do container  */
+  transform: translateY(-50%); /* Desloca o contêiner para cima por 50% da sua própria altura para centrar verticalmente */
+}
+
+/*Específica para elementos <strong> dentro do #container */
+#container strong {
+  font-size: 20px; /* Tamanho da fonte para texto em negrito */
+  line-height: 26px; /* Altura da linha, garantindo espaço adequado entre linhas de texto */
+}
+
+/* Parágrafos dentro do #container */
+#container p {
+  font-size: 16px; /* Tamanho da fonte para texto de parágrafo */
+  line-height: 22px; /* Altura da linha para parágrafos */
+
+  color: #8c8c8c; /* Cor cinza clara do texto */
+
+  margin: 0; /* Remove margens padrão do parágrafo */
+}
+
+/* links dentro do #container */
+#container a {
+  text-decoration: none; /* Remove o sublinhado dos links para um visual mais limpo */
+}
+
+/*  botões que aparecem no rodapé */
+.footer-button {
+  font-size: 0.8em; /* Tamanho da fonte relativo ao tamanho da fonte herdado */
+  padding: 10px; /* Espaçamento interno ao redor do texto no botão */
+}
+
+/*  ícones dentro dos botões do rodapé */
+.footer-button ion-icon {
+  font-size: 1.1em; /* Tamanho do ícone ligeiramente maior que o texto do botão */
+}
+
+/*  badge posicionado de forma absoluta sobre elementos, como notificações sobre ícones */
+.footer-badge {
+  position: absolute; /* Posicionamento absoluto para posicionar exatamente onde é necessário */
+  top: -5px; /* Posiciona o badge um pouco acima do elemento base */
+  right: -10px; /* Posiciona o badge um pouco à direita do elemento base */
+  font-size: 0.7em; /* Tamanho da fonte menor para o texto dentro do badge */
+}
+
+/* toolbar dentro do ion-footer */
+ion-footer ion-toolbar {
+  --background: #f7f2cad4; /* Cor de fundo semi-transparente personalizada para o toolbar no footer */
+}

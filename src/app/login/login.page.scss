@@ -1,0 +1,12 @@
+.button-dark-gray {
+    --background: #333; /* Cinza escuro */
+    --color: white; /* Cor do texto */
+}
+.small-button {
+  --min-width: 100px;  /* Ajuste a largura mínima conforme necessário */
+  --height: 40px;      /* Ajuste a altura conforme necessário */
+  width: 80%;
+  margin-left: auto;        // Centralizar o botão com margem automática à esquerda
+  margin-right: auto;       // Centralizar o botão com margem automática à direita
+  margin-top: 40px;         // Adicionar margem superior para deslocar para baixo
+}

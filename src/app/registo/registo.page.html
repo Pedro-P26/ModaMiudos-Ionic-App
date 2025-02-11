@@ -1,0 +1,110 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!--Texto com um tipo de letra importada-->
+    <ion-title class="bebas-neue-regular">Registo</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <!--Texto com um tipo de letra importada-->
+      <ion-title size="large" class="bebas-neue-regular">Registo</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Formulário de registro com validações -->
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input formControlName="username" type="text"></ion-input>
+    </ion-item>
+    <!-- Erros de Username -->
+    <ion-item *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">
+      <ion-label color="danger" *ngIf="registerForm.get('username')?.errors?.['required']">Username é obrigatório.</ion-label>
+      <ion-label color="danger" *ngIf="registerForm.get('username')?.errors?.['minLength']">Deve ter no mínimo 4 caracteres.</ion-label>
+      <ion-label color="danger" *ngIf="registerForm.get('username')?.errors?.['maxLength']">Deve ter no máximo 20 caracteres.</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+     <!-- Erros de Password -->
+     <ion-item *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+      <ion-label color="danger" *ngIf="registerForm.get('password')?.errors?.['required']">Password é obrigatório.</ion-label>
+      <ion-label color="danger" *ngIf="registerForm.get('password')?.errors?.['minLength']">Deve ter no mínimo 8 caracteres.</ion-label>
+      <ion-label color="danger" *ngIf="registerForm.get('password')?.errors?.['pattern']">Deve incluir letras maiúsculas, minúsculas e números.</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+    </ion-item>
+    <!-- Erros de Nome -->
+    <ion-item *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+      <ion-label color="danger" *ngIf="registerForm.get('name')?.errors?.['required']">Nome é obrigatório.</ion-label>
+      <ion-label color="danger" *ngIf="registerForm.get('name')?.errors?.['minLength']">Deve ter no mínimo 2 caracteres.</ion-label>
+      <ion-label color="danger" *ngIf="registerForm.get('name')?.errors?.['maxLength']">Deve ter no máximo 50 caracteres.</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Localidade</ion-label>
+      <ion-input formControlName="location" type="text"></ion-input>
+    </ion-item>
+    <!-- Erros de Localidade -->
+    <ion-item *ngIf="registerForm.get('location')?.invalid && registerForm.get('location')?.touched">
+      <ion-label color="danger" *ngIf="registerForm.get('location')?.errors?.['required']">Localidade é obrigatória.</ion-label>
+      <ion-label color="danger" *ngIf="registerForm.get('location')?.errors?.['inLength']">Deve ter no mínimo 2 caracteres.</ion-label>
+      <ion-label color="danger" *ngIf="registerForm.get('location')?.errors?.['maxLength']">Deve ter no máximo 100 caracteres.</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <!-- Erros de Email -->
+    <ion-item *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+      <ion-label color="danger" *ngIf="registerForm.get('email')?.errors?.['required']">Email é obrigatório.</ion-label>
+      <ion-label color="danger" *ngIf="registerForm.get('email')?.errors?.['email']">Deve ser um endereço de email válido.</ion-label>
+      <ion-label color="danger" *ngIf="registerForm.get('email')?.errors?.['maxLength']">Deve ter no máximo 100 caracteres.</ion-label>
+    </ion-item>
+
+    <!--Botão que apenas está ativo se os parametros estiverem bem-->
+    <ion-button class="button-dark-gray" type="submit" expand="block" [disabled]="!registerForm.valid">Registrar</ion-button>
+  </form>
+
+
+
+
+</ion-content>
+
+
+<!--Botões para navegar facilmente-->
+<ion-footer >
+  <ion-toolbar color="toolbar-background" style="background: white;">
+    <ion-row>
+      <ion-col size="4" >
+        <ion-button expand="block" (click)="home()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="home" style="color: black;"></ion-icon >
+          <ion-text style="color:black">Home</ion-text>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="carrinho()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="basket" style="color: black;"></ion-icon>
+          <ion-text style="color:black">Cesta</ion-text>
+          <ion-badge slot="end" color="blue">{{ (carrinhoService.carrinho$ | async)?.length }}</ion-badge>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="login()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="person" style="color: black;"></ion-icon>
+          <ion-text style="color:black">Conta</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

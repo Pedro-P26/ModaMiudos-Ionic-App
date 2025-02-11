@@ -1,0 +1,72 @@
+/* barra de progresso, configurando-a como um container flexível */
+.progress-bar {
+    display: flex; /* Define o layout flexível para alinhar os elementos  horizontalmente */
+    justify-content: space-around; /* Distribui espaço igual entre os elementos  */
+    align-items: center; /* Centraliza os elementos  verticalmente */
+    margin: 20px 0; /* Adiciona margem vertical acima e abaixo da barra */
+    position: relative; /* Posicionamento relativo para permitir posicionamento absoluto de elementos  */
+}
+
+/*  criar uma linha de conexão horizontal entre as etapas da barra de progresso */
+.progress-bar::before {
+    content: ''; /* Necessário para o pseudo-elemento ser exibido */
+    position: absolute; /* Posicionamento absoluto em relação ao seu container */
+    top: 50%; /* Centraliza verticalmente */
+    left: 15%; /* Distância da borda esquerda */
+    right: 15%; /* Distância da borda direita */
+    height: 4px; /* Altura da linha */
+    background-color: #d3d3d3; /* Cor da linha */
+    z-index: -1; /* Garante que a linha fique atrás dos círculos das etapas */
+}
+
+/* containers de cada etapa dentro da barra de progresso */
+.step {
+    display: flex; /* Define layout flexível para organizar conteúdo verticalmente */
+    flex-direction: column; /* Organiza os em uma coluna (verticalmente) */
+    align-items: center; /* Centraliza os horizontalmente */
+    position: relative; /* Posicionamento relativo para ajustes finos */
+    z-index: 1; /* Coloca as etapas na frente da linha de progresso */
+}
+
+/*  círculos que representam cada etapa do processo */
+.step .circle {
+    width: 24px; /* Largura do círculo */
+    height: 24px; /* Altura do círculo */
+    border-radius: 50%; /* Torna o elemento circular */
+    background-color: #d3d3d3; /* Cor de fundo padrão para etapas incompletas */
+    display: flex; /* Usa flexbox para centralizar o conteúdo dentro do círculo */
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Alinha o conteúdo horizontalmente */
+    font-weight: bold; /* Texto em negrito */
+    color: white; /* Cor do texto */
+}
+
+/* Altera a cor de fundo do círculo quando uma etapa é completada */
+.step.completed .circle {
+    background-color: #4caf50; /* Cor verde indica uma etapa completada */
+}
+
+/*  texto  abaixo de cada círculo */
+.step .label {
+    margin-top: 8px; /* Espaçamento acima do label */
+    font-size: 14px; /* Tamanho do texto */
+    color: #000; /* Cor do texto, preto para alta visibilidade */
+}
+
+/*  parágrafos dentro de ion-label, usada para descrições ou informações adicionais */
+ion-label p {
+    font-size: 0.8em; /* Tamanho do texto reduzido */
+    color: #666; /* Cor do texto cinza claro */
+    margin: 2px 0; /* Espaçamento vertical para separar visualmente do conteúdo adjacente */
+}
+
+  .button-dark-gray {
+    --background: #333; /* Cinza escuro */
+    --color: white; /* Cor do texto */
+  }
+  .small-button {
+    width: 80%;
+    margin-left: auto;        // Centralizar o botão com margem automática à esquerda
+    margin-right: auto;       // Centralizar o botão com margem automática à direita
+    
+  }

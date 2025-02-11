@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="bebas-neue-regular">
+      Moda Míudos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="bebas-neue-regular">Product List</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Barra de pesquisa -->
+  <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="filterProducts()"></ion-searchbar>
+
+  <!-- Início do conteúdo da lista de produtos -->
+  <ion-grid>
+    <ion-row>
+      <!-- Iteração sobre os produtos usando *ngFor -->
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let produto of filteredProducts">
+        <ion-card (click)="goToDetalhe(produto)">
+          <img src="./assets/{{produto.img}}" alt="Imagem do produto"/>
+          <ion-card-header>
+            <ion-card-title>{{ produto.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Preço: {{ produto.preco | currency:'EUR' }}</p>
+            <p>Cor: {{produto.cor}}</p>
+            <p>Referência: {{ produto.referencia }}</p>
+            <p>Composição: {{ produto.composicao }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<!--Botões para navegação rápida-->
+<ion-footer style="background: #f7f2cad4;">
+  <ion-toolbar color="toolbar-background" style="background: white;">
+    <ion-row>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="home()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="home" style="color: black;"></ion-icon>
+          <ion-text style="color:black">Home</ion-text>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="carrinho()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="basket" style="color: black;"></ion-icon>
+          <ion-text style="color:black">Cesta</ion-text>
+          <ion-badge slot="end" color="blue">{{ (carrinhoService.carrinho$ | async)?.length }}</ion-badge>
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand="block" (click)="login()" fill="outline" style="color: black;">
+          <ion-icon slot="start" name="person" style="color: black;"></ion-icon>
+          <ion-text style="color:black">Conta</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

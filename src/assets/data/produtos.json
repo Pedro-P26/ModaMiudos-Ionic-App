@@ -1,0 +1,153 @@
+{
+    "Calças": {
+      "id": "1",
+      "title": "Calças cargo",
+      "preco": "17",
+      "tamanho": ["6 anos (116 cm)", "7 anos (122 cm)", "8 anos (128 cm)","9 anos (134 cm)","10 anos (140 cm)","11-12 anos (152 cm)","13-14 anos (164 cm)"],
+      "img": "calca1.webp",
+      "referencia":"32543342",
+      "composicao":"100% algodão",
+      "cor":"beje",
+      "quantidade":"5"
+    },
+    "Sapatilhas": {
+        "id": "2",
+        "title": "Sapatilhas ",
+        "preco": "25",
+        "tamanho1": ["30t","31t","32t","33t","34t","35t","36t","37t"],
+        "img": "sapato1.webp",
+        "referencia":"38435234",
+        "composicao":"100% poliéster",
+        "cor": "branco",
+        "quantidade":"5"
+    },
+    
+    "Meias": {
+        "id": "3",
+        "title": "Meias spongebob",
+        "preco": "5",
+        "tamanho": ["6 anos (116 cm)", "7 anos (122 cm)", "8 anos (128 cm)","9 anos (134 cm)","10 anos (140 cm)","11-12 anos (152 cm)","13-14 anos (164 cm)"],
+        "img": "meia1.webp",
+        "referencia":"23574623",
+        "composicao":"100% Algodão",
+        "cor": "amarelo",
+        "quantidade":"5"
+    },
+    
+    "Camisola estampada": {
+        "id": "4",
+        "title": "Camisola estampada",
+        "preco": "11",
+        "tamanho": ["6 anos (116 cm)", "7 anos (122 cm)", "8 anos (128 cm)","9 anos (134 cm)","10 anos (140 cm)","11-12 anos (152 cm)","13-14 anos (164 cm)"],
+        "img": "camisola1.webp",
+        "referencia":"4357834",
+        "composicao":"100% Algodão",
+        "cor": "beje",
+        "quantidade":"5"
+    },
+    
+    "Calças ": {
+        "id": "5",
+        "title": "Calças de ganga",
+        "preco": "19",
+        "tamanho": ["6 anos (116 cm)", "7 anos (122 cm)", "8 anos (128 cm)","9 anos (134 cm)","10 anos (140 cm)","11-12 anos (152 cm)","13-14 anos (164 cm)"],
+        "img": "calca2.webp",
+        "referencia":"25348956",
+        "composicao":"100% algodão",
+        "cor":"preto",
+        "quantidade":"5"    
+    },
+
+    "Calças3 ": {
+        "id": "6",
+        "title": "Calças de ganga",
+        "preco": "17.5",
+        "tamanho": ["6 anos (116 cm)", "7 anos (122 cm)", "8 anos (128 cm)","9 anos (134 cm)","10 anos (140 cm)","11-12 anos (152 cm)","13-14 anos (164 cm)"],
+        "img": "calca3.webp",
+        "referencia":"73422551",
+        "composicao":"100% algodão",
+        "cor":"azul",
+        "quantidade":"5"    
+    },
+    "Meias2": {
+        "id": "7",
+        "title": "Meias One Piece",
+        "preco": "5",
+        "tamanho": ["6 anos (116 cm)", "7 anos (122 cm)", "8 anos (128 cm)","9 anos (134 cm)","10 anos (140 cm)","11-12 anos (152 cm)","13-14 anos (164 cm)"],
+        "img": "meia2.webp",
+        "referencia":"63251123",
+        "composicao":"100% Algodão",
+        "cor": "branco",
+        "quantidade":"5"
+    },
+
+    "Meias3": {
+        "id": "8",
+        "title": "Meias Nemo",
+        "preco": "5",
+        "tamanho": ["6 anos (116 cm)", "7 anos (122 cm)", "8 anos (128 cm)","9 anos (134 cm)","10 anos (140 cm)","11-12 anos (152 cm)","13-14 anos (164 cm)"],
+        "img": "meia3.webp",
+        "referencia":"84795620",
+        "composicao":"100% Algodão",
+        "cor": "laranja",
+        "quantidade":"5"
+    },
+    "Tshirt": {
+        "id": "9",
+        "title": "T-shirt",
+        "preco": "9.99",
+        "tamanho": ["6 anos (116 cm)", "7 anos (122 cm)", "8 anos (128 cm)","9 anos (134 cm)","10 anos (140 cm)","11-12 anos (152 cm)","13-14 anos (164 cm)"],
+        "img": "tshirt1.jpeg",
+        "referencia":"72835642",
+        "composicao":"100% Algodão",
+        "cor": "amarelo",
+        "quantidade":"5"
+    },
+    "Camisola2": {
+        "id": "10",
+        "title": "Camisola",
+        "preco": "13.99",
+        "tamanho": ["6 anos (116 cm)", "7 anos (122 cm)", "8 anos (128 cm)","9 anos (134 cm)","10 anos (140 cm)","11-12 anos (152 cm)","13-14 anos (164 cm)"],
+        "img": "camisola2.webp",
+        "referencia":"91287411",
+        "composicao":"100% Algodão",
+        "cor": "verde",
+        "quantidade":"5"
+    },
+    "Camisola3": {
+        "id": "11",
+        "title": "Camisola dupla manga",
+        "preco": "10.49",
+        "tamanho": ["6 anos (116 cm)", "7 anos (122 cm)", "8 anos (128 cm)","9 anos (134 cm)","10 anos (140 cm)","11-12 anos (152 cm)","13-14 anos (164 cm)"],
+        "img": "camisola3.jpeg",
+        "referencia":"23623875",
+        "composicao":"100% Algodão",
+        "cor": "universo",
+        "quantidade":"5"
+    },
+    "Sapatilhas2": {
+        "id": "12",
+        "title": "Sapatilhas pele ",
+        "preco": "28.99",
+        "tamanho1": ["30t","31t","32t","33t","34t","35t","36t","37t"],
+        "img": "sapato2.webp",
+        "referencia":"38435234",
+        "composicao":"100% poliéster",
+        "cor": "branco",
+        "quantidade":"5"
+    },
+    "Sandalias": {
+        "id": "13",
+        "title": "Sandálias pele ",
+        "preco": "31.49",
+        "tamanho1": ["30t","31t","32t","33t","34t","35t","36t","37t"],
+        "img": "sandalias.webp",
+        "referencia":"12458239",
+        "composicao":"100% poliéster",
+        "cor": "marinho",
+        "quantidade":"5"
+    }
+
+
+  }
+
